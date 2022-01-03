@@ -1,38 +1,90 @@
-.App {
-  text-align: center;
+:root {
+  --primary: rgb(255, 99, 71);
+  --secondary: rgba(255, 99, 71, 0.5);
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+.app {
+  width: 100%;
+  height: 100vh;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.header {
+  height: 30vh;
+  background-color: var(--secondary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.input-container {
   display: flex;
   flex-direction: column;
+}
+.input-container input {
+  box-sizing: border-box;
+  width: 200px;
+  height: 40px;
+  padding: 5px;
+  border: 1px solid var(--primary);
+  outline: none;
+}
+.input-container input::placeholder {
+  color: var(--secondary);
+}
+.input-container :first-child {
+  border-bottom: none;
+  border-top-left-radius: 5px;
+}
+.input-container :last-child {
+  border-bottom-left-radius: 5px;
+}
+.input-container + button {
+  width: 100px;
+  height: 80px;
+  border: 1px solid var(--primary);
+  border-left: none;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.todolist {
+  height: 70vh;
+  width: 50%;
+  margin: 20px auto;
+  background-color: #fff;
+}
+.todo {
+  display: flex;
+  border-bottom: 0.5px solid #fff;
+}
+.todo-name {
+  width: 40%;
+  height: 30px;
+  background-color: var(--primary);
+  color: #fff;
+  font-size: 13px;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.todo-deadline {
+  width: 40%;
+  background-color: var(--primary);
+  color: #fff;
+  border-left: 1px solid #fff;
+  border-right: 1px solid #fff;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.todo-finish {
+  width: 20%;
+  background-color: var(--primary);
+  border: none;
+  cursor: pointer;
+}
+.icon {
+  color: #fff;
 }
